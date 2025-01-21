@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE root [
-  <!ENTITY xxe SYSTEM "file:///etc/passwd">
-]>
 <root>
   <script>
     <![CDATA[
-      function logHello(event) {
-        console.log('hello', event.type);
+      function logHello(eventType) {
+        console.log('hello from ' + eventType);
       }
     ]]>
   </script>
 
-  <data onload="logHello(event)" onmouseover="logHello(event)" onclick="logHello(event)">
-    This is some XML content.
-  </data>
+  <!-- Simulated Visual Element -->
+  <circle onload="logHello('onload')" 
+          onmouseover="logHello('mouseover')" 
+          onclick="logHello('click')">
+    This is a simulated circle element.
+  </circle>
 </root>
